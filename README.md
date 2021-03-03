@@ -1,6 +1,6 @@
 # Car-Price-Prediction
 
-Prediction of the price of the car you ow, based on the characteristics of car.
+Prediction of the selling price of the car you own, based on few characteristics of your car.
 
 Built using
 1. Python
