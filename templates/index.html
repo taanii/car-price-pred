@@ -8,6 +8,7 @@
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="style.css">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
@@ -39,19 +40,17 @@ display:flex;
 <span id="yearr" ></span><br>
 <input id="distance" type="text" style="background-color:rgba(219, 228, 236,0.5);height: 45px;" name="kms Driven" placeholder="Distance Driven( in km )" required /><br>
 <span id="distancee" ></span> <br>
-<select name="fuel" style="background-color:rgba(219, 228, 236,0.5); width: 400px; height: 45px; padding: 10px; margin-bottom: 10px; font-size: 13px; border: 1px solid rgb(0, 0, 0);border-radius: 4px;box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2); color: rgb(0, 0, 0);" required>
-  <option value="Fuel Type" style="color: aliceblue;">Fuel Type</option>
+<select name="fuel" placeholder="Fuel Type" style="background-color:rgba(219, 228, 236,0.5); width: 400px; height: 45px; padding: 10px; margin-bottom: 10px; font-size: 13px; border: 1px solid rgb(0, 0, 0);border-radius: 4px;box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2); color: rgb(0, 0, 0);" required>
   <option value="Petrol">Petrol</option>
   <option value="Diesel">Diesel</option>
   <option value="LPG">LPG</option>
   <option value="CNG">CNG</option>
 	<option value="Electric">Electric</option>
-</select><br>
-<select name="transmission" style="background-color:rgba(219, 228, 236,0.5);width: 400px;height: 45px;padding: 10px;margin-bottom: 10px;font-size: 13px;border: 1px solid rgb(0, 0, 0);border-radius: 4px;box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);color: rgb(0, 0, 0);"  required>
-  <option value="Transmission" style="color: aliceblue;">Transmission</option>
+</select><br><br>
+<select name="transmission" placeholder="Transmission" style="background-color:rgba(219, 228, 236,0.5);width: 400px;height: 45px;padding: 10px;margin-bottom: 10px;font-size: 13px;border: 1px solid rgb(0, 0, 0);border-radius: 4px;box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);color: rgb(0, 0, 0);"  required>
   <option value="Automatic">Automatic</option>
   <option value="Manual">Manual</option>
-</select><br>
+</select><br><br>
        
 <button type="submit" class="btn btn-primary btn-block btn-large" style="margin-bottom: 10px;">Predict</button>
 
@@ -84,7 +83,7 @@ display:flex;
   document.getElementById('yearr').innerHTML="Year should be more than 4 digits";
   return false;
   }
-  if(year.value>2021)
+  if(year >= 2021)
   {
     document.getElementById('yearr').innerHTML="Invalid year";
   }
