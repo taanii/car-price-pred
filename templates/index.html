@@ -56,7 +56,7 @@ display:flex;
 <button type="submit" class="btn btn-primary btn-block btn-large" style="margin-bottom: 10px;">Predict</button>
 
         
-<!--<a href="visual" class="btn btn-primary btn-block btn-large" style="text-decoration: none;">Visualize</a>-->
+<!-- <a href="visual" class="btn btn-primary btn-block btn-large" style="text-decoration: none;">Visualize</a> -->
 </form>
   <div>
     <b><p>Predicted price of car</p> <p style="width: 100%; font-size: medium; color:aliceblue;">{{ prediction_text }}<br></p></b>
@@ -99,7 +99,7 @@ display:flex;
   {
     document.getElementById('yearr').innerHTML="Invalid year";
   }
-  if (year.search(/[a-z\A-Z\@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.]/)==1)
+  if (year.search(/[a-z\A-Z\@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.\#\,\*]/)==1)
   {
   document.getElementById('yearr').innerHTML="Year can't contain alphabets and special characters.";
   return false;
@@ -112,67 +112,18 @@ display:flex;
   else{
   document.getElementById('yearr').innerHTML="";
   }
-  //password
-  if (pass == "")
+  //km driven
+  if (distance == "")
   {
-  document.getElementById('passs').innerHTML="Password can't
-  be empty";
-  return false;
-  }if (pass.length<8)
-  {
-  document.getElementById('passs').innerHTML="Password should
-  be more than 8 characters";
+  document.getElementById('distancee').innerHTML="Distance can't be empty";
   return false;
   }
-  if (pass.search(/[0-9]/)==-1)
+  if (distance.search(/[a-z\A-Z\@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.\#\,\*]/)==1)
   {
-  document.getElementById('passs').innerHTML="Password should
-  contain atleast 1 number";
+  document.getElementById('distancee').innerHTML="Distance can't contain alphabets and special characters.";
   return false;
   }
-  if (pass.search(/[a-z]/)==-1)
-  {
-  document.getElementById('passs').innerHTML="Password should
-  contain atleast 1 lowercase character";
-  return false;
-  }
-  if (pass.search(/[A-Z]/)==-1)
-  {
-  document.getElementById('passs').innerHTML="Password should
-  contain atleast 1 uppercase character";
-  return false;
-  }
-  if (pass.search(/[@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.]/)==-1)
-  {
-  document.getElementById('passs').innerHTML="Password should
-  contain atleast 1 special character";
-  return false;
-  }
-  if (pass.search(/[#\,\*]/) != -1)
-  {
-  document.getElementById('passs').innerHTML="Password can't
-  contain # , * ";
-  return false; }else{
-  document.getElementById('passs').innerHTML="";
-  }
-  
-  //mobile
-  if (mobile == "")
-  {
-  document.getElementById('mobilee').innerHTML="Mobile no. can't be empty";
-  return false;
-  }
-  if (mobile.length<10)
-  {
-  document.getElementById('mobilee').innerHTML="Mobile no. can't be less than 10 digits";
-  return false;
-  }
-  if (mobile.length>10)
-  {
-  document.getElementById('mobilee').innerHTML="Mobile no.
-  can't be more than 10 digits";
-  return false;
-  }else{
+  else{
   alert("Submitted successfully...!");
   }
   }
