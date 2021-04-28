@@ -31,39 +31,39 @@ display:flex;
 ">
 
  <div class="login">
-	<h1>Predict Your Car Price</h1>
+<h1>Predict Your Car Price</h1>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form name="myform" action="{{ url_for('predict')}}"method="post" onsubmit="return(validateform());">
-        <input type="text" style="background-color:rgba(219, 228, 236,0.5); height: 45px;" name="Year of Purchase" placeholder="Year of Purchase" required="required" /><br>
-        <input type="text" style="background-color:rgba(219, 228, 236,0.5);height: 45px;" name="kms Driven" placeholder="Distance Driven( in km )" required="required" /><br>
-        <select name="fuel" style="background-color:rgba(219, 228, 236,0.5);width: 400px;height: 45px;padding: 10px;margin-bottom: 10px;font-size: 13px;text-shadow: 1px 1px 1px rgb(0,0,0);border: 1px solid rgba(0,0,0,0.3);border-radius: 4px;box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);">
-        <option value="Fuel Type" style="color: aliceblue;">Fuel Type</option>
-        <option value="Petrol">Petrol</option>
-        <option value="Diesel">Diesel</option>
-        <option value="LPG">LPG</option>
-        <option value="CNG">CNG</option>
-		<option value="Electric">Electric</option>
-		</select>
-		<select name="transmission" style="background-color:rgba(219, 228, 236,0.5);width: 400px;height: 45px;padding: 10px;margin-bottom: 10px;font-size: 13px;text-shadow: 1px 1px 1px rgb(0,0,0);border: 1px solid rgba(0,0,0,0.3);border-radius: 4px;box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);">
-        <option value="Transmission" style="color: aliceblue;">Transmission</option>
-        <option value="Automatic">Automatic</option>
-        <option value="Manual">Manual</option>
-        </select>
+<!-- Main Input For Receiving Query to our ML -->
+<form name="myform" action="{{ url_for('predict')}}"method="post" onsubmit="return validateform()">
+<input id="year" type="text" style="background-color:rgba(219, 228, 236,0.5); height: 45px;" name="Year of Purchase" placeholder="Year of Purchase" required="required" />
+<span id="yearr" ></span><br>
+<input id="distance" type="text" style="background-color:rgba(219, 228, 236,0.5);height: 45px;" name="kms Driven" placeholder="Distance Driven( in km )" required="required" />
+<span id="distancee" ></span> <br>
+<select name="fuel" style="background-color:rgba(219, 228, 236,0.5);width: 400px;height: 45px;padding: 10px;margin-bottom: 10px;font-size: 13px;text-shadow: 1px 1px 1px rgb(0,0,0);border: 1px solid rgba(0,0,0,0.3);border-radius: 4px;box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);">
+  <option value="Fuel Type" style="color: aliceblue;">Fuel Type</option>
+  <option value="Petrol">Petrol</option>
+  <option value="Diesel">Diesel</option>
+  <option value="LPG">LPG</option>
+  <option value="CNG">CNG</option>
+	<option value="Electric">Electric</option>
+</select>
+<select name="transmission" style="background-color:rgba(219, 228, 236,0.5);width: 400px;height: 45px;padding: 10px;margin-bottom: 10px;font-size: 13px;text-shadow: 1px 1px 1px rgb(0,0,0);border: 1px solid rgba(0,0,0,0.3);border-radius: 4px;box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);">
+  <option value="Transmission" style="color: aliceblue;">Transmission</option>
+  <option value="Automatic">Automatic</option>
+  <option value="Manual">Manual</option>
+</select>
        
-        <button type="submit" class="btn btn-primary btn-block btn-large" style="margin-bottom: 10px;">Predict</button>
+<button type="submit" class="btn btn-primary btn-block btn-large" style="margin-bottom: 10px;">Predict</button>
 
         
-        <!--<a href="visual" class="btn btn-primary btn-block btn-large" style="text-decoration: none;">Visualize</a>-->
-    </form>
-    <div>
-     <b><p>Predicted price of car</p> <p style="width: 100%; font-size: medium; color:aliceblue;">{{ prediction_text }}<br></p></b>
-     </div>
- </div>
-
-
-
+<!--<a href="visual" class="btn btn-primary btn-block btn-large" style="text-decoration: none;">Visualize</a>-->
+</form>
+  <div>
+    <b><p>Predicted price of car</p> <p style="width: 100%; font-size: medium; color:aliceblue;">{{ prediction_text }}<br></p></b>
+  </div>
+</div>
 </body>
+
 <section class="pred">
   <h1>Predict Your Car Price</h1>
   <form>
@@ -71,11 +71,109 @@ display:flex;
       <label for="exampleFormControlInput1" class="form-label">Email address</label>
       <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
       </div>
-      
   </form>
-
 </section>
 <body>
   
 </body>
 </html>
+
+<script>
+  function validateform()
+  {
+  var year = document.getElementById('year').value;
+  var distance = document.getElementById('distance').value;
+
+  //year
+  if (year== "")
+  {
+  document.getElementById('yearr').innerHTML="Year can't be empty";
+  return false;
+  }
+  if (year.length<4)
+  {
+  document.getElementById('yearr').innerHTML="Year should be more than 4 digits";
+  return false;
+  }
+  if(year > 2021)
+  {
+    document.getElementById('yearr').innerHTML="Invalid year";
+  }
+  if (year.search(/[a-z\A-Z\@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.]/)==1)
+  {
+  document.getElementById('yearr').innerHTML="Year can't contain alphabets and special characters.";
+  return false;
+  }
+  if (year.length > 4)
+  {
+  document.getElementById('yearr').innerHTML="Year can't be more than 4 digits";
+  return false;
+  }
+  else{
+  document.getElementById('yearr').innerHTML="";
+  }
+  //password
+  if (pass == "")
+  {
+  document.getElementById('passs').innerHTML="Password can't
+  be empty";
+  return false;
+  }if (pass.length<8)
+  {
+  document.getElementById('passs').innerHTML="Password should
+  be more than 8 characters";
+  return false;
+  }
+  if (pass.search(/[0-9]/)==-1)
+  {
+  document.getElementById('passs').innerHTML="Password should
+  contain atleast 1 number";
+  return false;
+  }
+  if (pass.search(/[a-z]/)==-1)
+  {
+  document.getElementById('passs').innerHTML="Password should
+  contain atleast 1 lowercase character";
+  return false;
+  }
+  if (pass.search(/[A-Z]/)==-1)
+  {
+  document.getElementById('passs').innerHTML="Password should
+  contain atleast 1 uppercase character";
+  return false;
+  }
+  if (pass.search(/[@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.]/)==-1)
+  {
+  document.getElementById('passs').innerHTML="Password should
+  contain atleast 1 special character";
+  return false;
+  }
+  if (pass.search(/[#\,\*]/) != -1)
+  {
+  document.getElementById('passs').innerHTML="Password can't
+  contain # , * ";
+  return false; }else{
+  document.getElementById('passs').innerHTML="";
+  }
+  
+  //mobile
+  if (mobile == "")
+  {
+  document.getElementById('mobilee').innerHTML="Mobile no. can't be empty";
+  return false;
+  }
+  if (mobile.length<10)
+  {
+  document.getElementById('mobilee').innerHTML="Mobile no. can't be less than 10 digits";
+  return false;
+  }
+  if (mobile.length>10)
+  {
+  document.getElementById('mobilee').innerHTML="Mobile no.
+  can't be more than 10 digits";
+  return false;
+  }else{
+  alert("Submitted successfully...!");
+  }
+  }
+  </script>
