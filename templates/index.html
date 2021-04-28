@@ -16,7 +16,7 @@
   
 <style>
   ::placeholder {
-    color:rgb(13, 13, 14);
+    color:rgb(255, 255, 255);
     opacity:0.8; /* Firefox */
     font-weight: bold;
   }
@@ -29,7 +29,7 @@ background-size:cover;
 height:100vh;
 display:flex;
 ">
-<div style="background-color: rgba(255, 255, 255, 0.349); padding: 20px;">
+<section style="background-color: rgba(255, 255, 255, 0.349); padding: 20px;">
 <div class="login">
 <h1>Predict Your Car Price</h1><br>
 
@@ -59,10 +59,10 @@ display:flex;
 <!-- <a href="visual" class="btn btn-primary btn-block btn-large" style="text-decoration: none;">Visualize</a> -->
 </form>
   <div>
-    <b><p>Predicted price of car</p> <p style="width: 100%; font-size: medium; color:aliceblue;">{{ prediction_text }}<br></p></b>
+    <b><h1>Predicted price of car</h1> <p style="width: 100%; font-size: medium; color:aliceblue;">{{ prediction_text }}<br></p></b>
   </div>
 </div>
-</div>
+</section>
 </body>
 
 </html>
