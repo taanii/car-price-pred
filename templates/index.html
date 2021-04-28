@@ -30,8 +30,8 @@ height:100vh;
 display:flex;
 ">
 
- <div class="login">
-<h1>Predict Your Car Price</h1><br>
+ <div class="login" style="background-color: rgba(250, 250, 250, 0.877);">
+<h1 style="color: rgb(0, 0, 255)">Predict Your Car Price</h1><br>
 
 <!-- Main Input For Receiving Query to our ML -->
 <form name="myform" action="{{ url_for('predict')}}"method="post" onsubmit="return validateform()">
