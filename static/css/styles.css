@@ -59,3 +59,26 @@ input {
 	opacity: 1; 
   }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); } */
+
+.login {
+    padding-left: 40px;
+    margin-left: 40px;
+ }
+ 
+ body {
+     background-image: url(../car.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-position: center;  
+     overflow: hidden; /* Hide scrollbars */
+                    
+ }
+ 
+ h1, label,h4,h2 {
+     color: white;
+ }
+ 
+ span {
+     color: white;
+ }
