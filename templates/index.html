@@ -110,11 +110,10 @@ display:flex;
   </div>
   </section>
 
-
+<!--
 <div class="login">
 <h1 style="color: white;">Predict Your Car Price</h1><br>
 
-<!-- Main Input For Receiving Query to our ML -->
 <form name="myform" action="{{ url_for('predict')}}"method="post" onsubmit="return validateform()">
 <input id="year" type="text" style="background-color:rgba(219, 228, 236, 0.658); height: 45px;" name="Year of Purchase" placeholder="Year of Purchase" required /><br>
 <span id="yearr" ></span><br>
@@ -138,7 +137,6 @@ display:flex;
 </select><br><br>
 
 <button type="submit" class="btn btn-primary btn-block btn-large" style="margin-bottom: 10px;">Predict</button>
-<!-- <a href="visual" class="btn btn-primary btn-block btn-large" style="text-decoration: none;">Visualize</a> -->
 </form>
 
   <div>
@@ -148,45 +146,10 @@ display:flex;
 </div>
 </body>
 
+-->
 
 
 
-<!--Old+new ui-->
-<div class="login">
-  <h1 style="color: white;">Predict Your Car Price</h1><br>
-  
-  <!-- Main Input For Receiving Query to our ML -->
-  <form name="myform" action="{{ url_for('predict')}}"method="post" onsubmit="return validateform()">
-  <input id="year" type="text" style="background-color:rgba(219, 228, 236, 0.658); height: 45px;" name="Year of Purchase" placeholder="Year of Purchase" required /><br>
-  <span id="yearr" ></span><br>
-  
-  <input id="distance" type="text" style="background-color:rgba(219, 228, 236, 0.658);height: 45px;" name="kms Driven" placeholder="Distance Driven( in km )" required /><br>
-  <span id="distancee" ></span> <br>
-  
-  <select name="fuel" placeholder="Fuel Type" style="background-color:rgba(219, 228, 236, 0.658); width: 400px; height: 45px; padding: 10px; margin-bottom: 10px; font-size: 13px; border: 1px solid rgb(0, 0, 0);border-radius: 4px;box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2); color: rgb(0, 0, 0);" required>
-    <option style="color: white;" value="" disabled selected hidden>Fuel Type</option>
-    <option value="Petrol">Petrol</option>
-    <option value="Diesel">Diesel</option>
-    <option value="LPG">LPG</option>
-    <option value="CNG">CNG</option>
-    <option value="Electric">Electric</option>
-  </select><br><br>
-  
-  <select name="transmission" placeholder="Transmission" style="background-color:rgba(219, 228, 236, 0.658);width: 400px;height: 45px;padding: 10px;margin-bottom: 10px;font-size: 13px;border: 1px solid rgb(0, 0, 0);border-radius: 4px;box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);color: rgb(0, 0, 0);"  required>
-    <option style="color: white;" value="" disabled selected hidden><b>Transmission</b></option>
-    <option value="Automatic">Automatic</option>
-    <option value="Manual">Manual</option>
-  </select><br><br>
-  
-  <button type="submit" class="btn btn-primary btn-block btn-large" style="margin-bottom: 10px;">Predict</button>
-  <!-- <a href="visual" class="btn btn-primary btn-block btn-large" style="text-decoration: none;">Visualize</a> -->
-  </form>
-  
-    <div>
-      <br>
-      <b><p style="color: white;">Predicted price of car</p> <h1 style="width: 100%; font-size: medium; color:aliceblue;">{{ prediction_text }}<br></h1></b>
-    </div>
-  </div>
   </body>
 
 
