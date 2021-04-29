@@ -85,12 +85,13 @@ display:flex;
   }
   if (year.length<4)
   {
-  document.getElementById('yearr').innerHTML="Year should be more than 4 digits";
+  document.getElementById('yearr').innerHTML="Year should be 4 digits";
   return false;
   }
   if(year >= 2021)
   {
     document.getElementById('yearr').innerHTML="Invalid year";
+    return false;
   }
   if (year.search(/[a-z\A-Z\@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.\#\,\*]/)==1)
   {
