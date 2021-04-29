@@ -169,27 +169,6 @@ display:flex;
   var year = document.getElementById('year').value;
   var distance = document.getElementById('distance').value;
 
-  var letters = /^[A-Za-z]+$/;
-      if(year.value.match(letters))
-      {
-        document.getElementById('yearr').innerHTML="Invalid year";
-        return false;
-      }
-      else
-      {
-        document.getElementById('yearr').innerHTML="";
-      }
-
-
-      if(distance.value.match(letters))
-      {
-        document.getElementById('distancee').innerHTML="Invalid distance";
-        return false;
-      }
-      else
-      {
-        document.getElementById('distancee').innerHTML="";
-      }
 
   //year
   if (year== "")
@@ -252,7 +231,7 @@ display:flex;
   return false;
   }
   else{
-  alert("Submitted successfully...!");
+  alert("Submitted successfully! Click OK to view your results ");
   }
   }
   </script>
