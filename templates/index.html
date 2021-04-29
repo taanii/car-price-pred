@@ -169,6 +169,28 @@ display:flex;
   var year = document.getElementById('year').value;
   var distance = document.getElementById('distance').value;
 
+  var letters = /^[A-Za-z]+$/;
+      if(year.value.match(letters))
+      {
+        document.getElementById('yearr').innerHTML="Invalid year";
+        return false;
+      }
+      else
+      {
+        document.getElementById('yearr').innerHTML="";
+      }
+
+
+      if(distance.value.match(letters))
+      {
+        document.getElementById('distancee').innerHTML="Invalid distance";
+        return false;
+      }
+      else
+      {
+        document.getElementById('distancee').innerHTML="";
+      }
+
   //year
   if (year== "")
   {
@@ -180,14 +202,24 @@ display:flex;
   document.getElementById('yearr').innerHTML="Year should be 4 digits";
   return false;
   }
-  if(year >= 2021)
+  if(year > 2021)
   {
     document.getElementById('yearr').innerHTML="Invalid year";
     return false;
   }
-  if (year.search(/[a-z\A-Z\@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.\#\,\*]/)==1)
+  if (year.search(/[a-z]/)==1)
   {
-  document.getElementById('yearr').innerHTML="Year can't contain alphabets and special characters.";
+  document.getElementById('yearr').innerHTML="Invalid year";
+  return false;
+  }
+  if (year.search(/[A-Z]/)==1)
+  {
+  document.getElementById('yearr').innerHTML="Invalid year";
+  return false;
+  }
+  if (year.search(/[@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.\#\,\*]/)==1)
+  {
+  document.getElementById('yearr').innerHTML="Invalid year";
   return false;
   }
   if (year.length > 4)
@@ -204,9 +236,19 @@ display:flex;
   document.getElementById('distancee').innerHTML="Distance can't be empty";
   return false;
   }
-  if (distance.search(/[a-z\A-Z\@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.\#\,\*]/)==1)
+  if (distance.search(/[a-z]/)==1)
   {
-  document.getElementById('distancee').innerHTML="Distance can't contain alphabets and special characters.";
+  document.getElementById('distancee').innerHTML="Invalid distance";
+  return false;
+  }
+  if (distance.search(/[A-Z]/)==1)
+  {
+  document.getElementById('distancee').innerHTML="Invalid distance";
+  return false;
+  }
+  if (distance.search(/[@\!\$\%\^\&\(\)\_\-\+\=\<\>\?\.\#\,\*]/)==1)
+  {
+  document.getElementById('distancee').innerHTML="Invalid distance";
   return false;
   }
   else{
