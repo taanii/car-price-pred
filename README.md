@@ -11,5 +11,5 @@ Built using
 6. Pandas
 7. HTML & CSS
 
-You can view thr live demo here https://car-price-predddd.herokuapp.com
+You can view thr live demo here https://car-price-predddd.herokuapp.com/
 
